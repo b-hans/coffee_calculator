@@ -2,6 +2,17 @@ import 'package:flutter/material.dart';
 
 void main() => runApp(MyApp());
 
+int _count = 0;
+
+//class MyApp extends StatefulWidget {
+//  _HomePage createState() => new _HomePage();
+//}
+//
+//class _HomePage extends State<MyApp> {
+//  void _increase() {
+//    setState(() => _count++);
+//  }
+
 class MyApp extends StatelessWidget {
   // This widget is the root of your application.
   @override
@@ -26,7 +37,7 @@ class MyApp extends StatelessWidget {
 Widget amountSection = Container(
   padding: const EdgeInsets.all(32),
   child: Text(
-    "Testing things here",
+    "Water amount: $_count",
   ),
 );
 
@@ -36,11 +47,28 @@ Widget buttonSection = Container(
     children: [
       const RaisedButton(
         onPressed: null,
+        disabledColor: Colors.grey,
+
         child: Text(
             'Convert',
-            style: TextStyle(fontSize: 20)
+            style: TextStyle(
+              fontSize: 15,
+              color: Colors.black,
+            )
         ),
       ),
+      const RaisedButton(
+        onPressed: null,
+        disabledColor: Colors.grey,
+        child: Text(
+            'Clear',
+            style: TextStyle(
+                fontSize: 15,
+                color: Colors.black,
+            )
+        ),
+      ),
+
     ],
   ),
 );
